@@ -1,38 +1,44 @@
-// // Earn.tsx
+// // Friends.tsx
 // import React from 'react';
 
-// interface EarnProps {
+// interface FriendsProps {
 //   onBack: () => void;
-//   onCompleteTask: () => void;
+//   onInvite: () => void;
 // }
 
-// const Earn: React.FC<EarnProps> = ({ onBack, onCompleteTask }) => (
-//   <div className="bg-[#dfe6e9] text-[#2d3436] h-screen flex flex-col items-center justify-center">
-//     <h1 className="text-2xl font-bold mb-6">Tasks</h1>
-//     <div className="space-y-4">
-//       {[1, 2, 3, 4, 5].map(task => (
-//         <button
-//           key={task}
-//           className="bg-[#74b9ff] text-white py-2 px-4 rounded-full"
-//           onClick={() => {
-//             window.open('https://youtu.be/4bMOTTJqGgM?si=nGZFC9Fd2gGq5PyP', '_blank');
-//             onCompleteTask();
-//           }}
-//         >
-//           Task {task}
-//         </button>
-//       ))}
-//     </div>
-//     <button
-//       className="mt-6 bg-[#0984e3] text-white py-2 px-4 rounded-full"
-//       onClick={onBack}
-//     >
-//       Back
-//     </button>
-//   </div>
-// );
+// const Friends: React.FC<FriendsProps> = ({ onBack, onInvite }) => {
+//   const handleInviteClick = () => {
+//     const shareData = {
+//       title: 'Join Simple Tapify!',
+//       text: 'Join Simple Tapify and earn bonuses!',
+//       url: 'https://t.me/tapify_bot/simpleTapifyApp',
+//     };
+//     navigator.share(shareData).then(() => {
+//       onInvite();
+//     }).catch(console.error);
+//   };
 
-// export default Earn;
+//   return (
+//     <div className="bg-[#dfe6e9] text-[#2d3436] h-screen flex flex-col items-center justify-center">
+//       <h1 className="text-2xl font-bold mb-6">Invite friends!</h1>
+//       <p className="mb-4">You and your friend will receive bonuses.</p>
+//       <button
+//         className="bg-[#74b9ff] text-white py-2 px-4 rounded-full mb-6"
+//         onClick={handleInviteClick}
+//       >
+//         Invite a friend (500,000)
+//       </button>
+//       <button
+//         className="bg-[#0984e3] text-white py-2 px-4 rounded-full"
+//         onClick={onBack}
+//       >
+//         Back
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default Friends;
 
 import React from 'react';
 import Hamster from './icons/Hamster';
@@ -43,8 +49,8 @@ import Coins from './icons/Coins';
 import Info from './icons/Info';
 import Settings from './icons/Settings';
 
-interface EarnProps {
-  onCompleteTask: () => void;
+interface FriendsProps {
+  onInvite: () => void;
   dailyRewardTimeLeft: string;
   dailyCipherTimeLeft: string;
   dailyComboTimeLeft: string;
@@ -54,8 +60,8 @@ interface EarnProps {
   setCurrentPage: (page: string) => void;
 }
 
-const Earn: React.FC<EarnProps> = ({
-  onCompleteTask,
+const Friends: React.FC<FriendsProps> = ({
+  onInvite,
   dailyRewardTimeLeft,
   dailyCipherTimeLeft,
   dailyComboTimeLeft,
@@ -141,21 +147,14 @@ const Earn: React.FC<EarnProps> = ({
 
             <div className="px-4 mt-4 flex justify-center">
               <div className="px-4 py-2 flex items-center space-x-2">
-                <h1 className="text-2xl font-bold mb-6">Tasks</h1>
-                <div className="space-y-4">
-                  {[1, 2, 3, 4, 5].map(task => (
-                    <button
-                      key={task}
-                      className="bg-[#74b9ff] text-white py-2 px-4 rounded-full"
-                      onClick={() => {
-                        window.open('https://youtu.be/4bMOTTJqGgM?si=nGZFC9Fd2gGq5PyP', '_blank');
-                        onCompleteTask();
-                      }}
-                    >
-                      Task {task}
-                    </button>
-                  ))}
-                </div>
+                <h1 className="text-2xl font-bold mb-6">Invite friends!</h1>
+                <p className="text-lg mb-6">You and your friend will receive bonuses.</p>
+                <button
+                  className="mt-6 bg-[#0984e3] text-white py-2 px-4 rounded-full"
+                  onClick={onInvite}
+                >
+                  Invite a friend (500,000)
+                </button>
               </div>
             </div>
 
@@ -188,4 +187,4 @@ const Earn: React.FC<EarnProps> = ({
   );
 };
 
-export default Earn;
+export default Friends;

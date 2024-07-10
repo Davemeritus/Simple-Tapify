@@ -63,3 +63,13 @@
     transform: translateY(-50px);
   }
 }
+
+.active-icon {
+  border: 2px solid white;
+  color: white;
+}
+
+.inactive-icon {
+  opacity: 0.6;
+  color: #50e3c2;
+}
