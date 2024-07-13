@@ -2247,7 +2247,7 @@ const Friends: React.FC<FriendsProps> = ({
             </div>
 
             <div className="px-4 mt-8">
-              <h2 className="text-xl font-bold text-center">List of friends (3)</h2>
+              <h2 className="text-xl font-bold text-center">List of friends (2)</h2>
               <div className="mt-4 space-y-4 flex flex-col items-center">
                 {friends.map((friend, index) => (
                   <div key={index} className="bg-[#74b9ff] text-[#2d3436] rounded-lg shadow-lg p-2 flex items-center justify-between w-full max-w-sm mx-auto" style={{ borderRadius: '12px' }}>
