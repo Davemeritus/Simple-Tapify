@@ -2148,8 +2148,8 @@ const Friends: React.FC<FriendsProps> = ({
 
   const friends = [
     { name: 'Bernado Silva', coins: 5000 },
-    { name: 'Lionel Messi', coins: 25000 },
-    { name: 'Cristiano Ronaldo', coins: 100000 }
+    { name: 'Lionel Messi', coins: 25000 }
+   
   ];
 
   const levelNames = [
