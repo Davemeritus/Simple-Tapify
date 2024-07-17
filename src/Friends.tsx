@@ -2221,7 +2221,7 @@ const Friends: React.FC<FriendsProps> = ({
                 <img src={hamsterCoin} alt="Hamster Coin" className="w-12 h-12" />
                 <div className="ml-4 flex-1">
                   <p className="text-lg font-bold">Invite a friend</p>
-                  <p className="text-sm mt-1">• +500,000 coins for you and your friend</p>
+                  <p className="text-sm mt-1"> +5,000 coins for you and your friend</p>
                 </div>
                 <button
                   className="bg-[#0984e3] text-white py-2 px-4 rounded-full"
@@ -2235,7 +2235,7 @@ const Friends: React.FC<FriendsProps> = ({
                 <img src={hamsterCoin} alt="Hamster Coin" className="w-12 h-12" />
                 <div className="ml-4 flex-1">
                   <p className="text-lg font-bold">Invite a friend with Telegram Premium</p>
-                  <p className="text-sm mt-1">• +800,000 coins for you and your friend</p>
+                  <p className="text-sm mt-1"> +10,000 coins for you and your friend</p>
                 </div>
                 <button
                   className="bg-[#0984e3] text-white py-2 px-4 rounded-full"
