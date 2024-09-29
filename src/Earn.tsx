@@ -794,12 +794,12 @@
 // }) => {
 //   const tasks = [
 //     { title: 'Crypto Security', url: 'https://youtu.be/hxOApe1P9dM?si=WoY2uK1lL0fwuXtD', reward: 100000 }
-    
+
 //   ];
 
 //   const socialTasks = [
 //     { title: 'Follow our X account', url: 'https://twitter.com/beloved_tope', reward: 50000 },
-  
+
 //     { title: 'Follow our Telegram Channel', url: 'https://t.me/tapify_bot', reward: 50000, isTelegram: true }
 //   ];
 
@@ -924,8 +924,7 @@
 
 // export default Earn;
 
-
-// 
+//
 
 // import React from 'react';
 // import Hamster from './icons/Hamster';
@@ -1236,9 +1235,10 @@
 
 // export default Earn;
 
-import React from 'react';
-import Hamster from './icons/Hamster';
-import { binanceLogo, mainCharacter, hamsterCoin, dollarCoin } from './images';
+import React from "react";
+import Hamster from "./icons/Hamster";
+import { binanceLogo, mainCharacter, hamsterCoin, dollarCoin } from "./images";
+import NavButtons from "./assets/components/NavButtons";
 
 interface EarnProps {
   onCompleteTask: (reward: number) => void;
@@ -1253,20 +1253,41 @@ const Earn: React.FC<EarnProps> = ({
   onCompleteTelegramTask,
   setCurrentPage,
   setProfitPerHour,
-  profitPerHour
+  profitPerHour,
 }) => {
   const tasks = [
-    { title: 'Crypto Security', url: 'https://youtu.be/hxOApe1P9dM?si=WoY2uK1lL0fwuXtD', reward: 100000, pph: 3000 }
+    {
+      title: "Crypto Security",
+      url: "https://youtu.be/hxOApe1P9dM?si=WoY2uK1lL0fwuXtD",
+      reward: 100000,
+      pph: 3000,
+    },
   ];
 
   const socialTasks = [
-    { title: 'Follow our X account', url: 'https://twitter.com/beloved_tope', reward: 50000, pph: 2000 },
-    { title: 'Follow our Telegram Channel', url: 'https://t.me/tapify_bot', reward: 50000, isTelegram: true, pph: 1500 }
+    {
+      title: "Follow our X account",
+      url: "https://twitter.com/beloved_tope",
+      reward: 50000,
+      pph: 2000,
+    },
+    {
+      title: "Follow our Telegram Channel",
+      url: "https://t.me/tapify_bot",
+      reward: 50000,
+      isTelegram: true,
+      pph: 1500,
+    },
   ];
 
-  const handleTaskClick = (task: { url?: string, reward: number, isTelegram?: boolean, pph: number }) => {
+  const handleTaskClick = (task: {
+    url?: string;
+    reward: number;
+    isTelegram?: boolean;
+    pph: number;
+  }) => {
     if (task.url) {
-      window.open(task.url, '_blank');
+      window.open(task.url, "_blank");
     }
     if (task.isTelegram) {
       onCompleteTelegramTask();
@@ -1293,11 +1314,16 @@ const Earn: React.FC<EarnProps> = ({
               <div className="w-full">
                 <div className="flex justify-between">
                   <p className="text-sm">Legendary</p>
-                  <p className="text-sm">7 <span className="text-[#74b9ff]">/ 10</span></p>
+                  <p className="text-sm">
+                    7 <span className="text-[#74b9ff]">/ 10</span>
+                  </p>
                 </div>
                 <div className="flex items-center mt-1 border-2 border-[#6c5ce7] rounded-full">
                   <div className="w-full h-2 bg-[#6c5ce7]/[0.6] rounded-full">
-                    <div className="bg-[#6c5ce7] h-2 rounded-full" style={{ width: `75%` }}></div>
+                    <div
+                      className="bg-[#6c5ce7] h-2 rounded-full"
+                      style={{ width: `75%` }}
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -1306,90 +1332,99 @@ const Earn: React.FC<EarnProps> = ({
               <img src={binanceLogo} alt="Exchange" className="w-8 h-8" />
               <div className="h-[32px] w-[2px] bg-[#6c5ce7] mx-2"></div>
               <div className="flex-1 text-center">
-                <p className="text-xs text-[#50e3c2] font-medium">Profit per hour</p>
+                <p className="text-xs text-[#50e3c2] font-medium">
+                  Profit per hour
+                </p>
                 <div className="flex items-center justify-center space-x-1">
-                  <img src={hamsterCoin} alt="Dollar Coin" className="w-[18px] h-[18px]" />
-                  <p className="text-sm">+{(profitPerHour / 1000).toFixed(2)}K</p>
+                  <img
+                    src={hamsterCoin}
+                    alt="Dollar Coin"
+                    className="w-[18px] h-[18px]"
+                  />
+                  <p className="text-sm">
+                    +{(profitPerHour / 1000).toFixed(2)}K
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex-grow mt-4 bg-[#74b9ff] rounded-t-[48px] relative z-0">
+        <div className="flex-grow mt-4 bg-[#74b9ff] overflow-y-scroll rounded-t-[48px] relative z-0">
           <div className="absolute top-[2px] left-0 right-0 bottom-0 bg-[#dfe6e9] rounded-t-[46px]">
             <h1 className="text-center text-2xl font-bold mb-4">Tasks</h1>
 
-            <div className="px-4 space-y-4">
+            <div className="flex flex-col px-4 gap-y-4 mb-10">
               <div className="bg-[#74b9ff] rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto">
-                <h2 className="text-lg font-bold mb-4">Simple-Tapify Youtube</h2>
+                <h2 className="text-lg font-bold mb-4">
+                  Simple-Tapify Youtube
+                </h2>
                 {tasks.map((task, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-md p-4 mb-2 cursor-pointer flex items-center" onClick={() => handleTaskClick(task)}>
-                    <img src={mainCharacter} alt="Main Character" className="w-12 h-12" />
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg shadow-md p-4 mb-2 cursor-pointer flex items-center"
+                    onClick={() => handleTaskClick(task)}
+                  >
+                    <img
+                      src={mainCharacter}
+                      alt="Main Character"
+                      className="w-12 h-12"
+                    />
                     <div className="ml-4">
                       <p className="font-bold">{task.title}</p>
                       <p className="text-sm flex items-center">
-                        <img src={hamsterCoin} alt="Hamster Coin" className="inline w-4 h-4 mr-1" /> +{task.reward.toLocaleString()}
-                        <img src={dollarCoin} alt="Dollar Coin" className="inline w-4 h-4 mr-1 ml-2" /> +{task.pph}PPH
+                        <img
+                          src={hamsterCoin}
+                          alt="Hamster Coin"
+                          className="inline w-4 h-4 mr-1"
+                        />{" "}
+                        +{task.reward.toLocaleString()}
+                        <img
+                          src={dollarCoin}
+                          alt="Dollar Coin"
+                          className="inline w-4 h-4 mr-1 ml-2"
+                        />{" "}
+                        +{task.pph}PPH
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-[#74b9ff] rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto">
+              <div className="bg-[#74b9ff] rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto mb-3">
                 <h2 className="text-lg font-bold mb-4">Tasks List</h2>
                 {socialTasks.map((task, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-md p-4 mb-2 cursor-pointer flex items-center" onClick={() => handleTaskClick(task)}>
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg shadow-md p-4 mb-2 cursor-pointer flex items-center"
+                    onClick={() => handleTaskClick(task)}
+                  >
                     <Hamster size={24} className="w-12 h-12" />
                     <div className="ml-4">
                       <p className="font-bold">{task.title}</p>
                       <p className="text-sm flex items-center">
-                        <img src={hamsterCoin} alt="Hamster Coin" className="inline w-4 h-4 mr-1" /> +{task.reward.toLocaleString()}
-                        <img src={dollarCoin} alt="Dollar Coin" className="inline w-4 h-4 mr-1 ml-2" /> +{task.pph}PPH
+                        <img
+                          src={hamsterCoin}
+                          alt="Hamster Coin"
+                          className="inline w-4 h-4 mr-1"
+                        />{" "}
+                        +{task.reward.toLocaleString()}
+                        <img
+                          src={dollarCoin}
+                          alt="Dollar Coin"
+                          className="inline w-4 h-4 mr-1 ml-2"
+                        />{" "}
+                        +{task.pph}PPH
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-
-              <div className="bg-[#74b9ff] rounded-lg shadow-lg p-4 w-full max-w-sm mx-auto cursor-pointer" onClick={() => setCurrentPage('dailyReward')}>
-                <h2 className="text-lg font-bold mb-4">Daily Tasks</h2>
-                <div className="bg-white rounded-lg shadow-md p-4 mb-2 flex items-center">
-                  <div className="mr-4">
-                    <img src={dollarCoin} alt="Gold Coin" className="w-12 h-12" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#2d3436]">Daily reward</p>
-                    <p className="text-sm text-[#2d3436] flex items-center">
-                      <img src={dollarCoin} alt="Dollar Coin" className="inline w-4 h-4 mr-1" /> +3,549,000
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-[#6c5ce7] flex justify-around items-center z-50 rounded-3xl text-xs">
-              <div className="text-center text-[#50e3c2] w-1/5 bg-[#6c5ce7] m-1 p-2 rounded-2xl" onClick={() => setCurrentPage('home')}>
-                <img src={binanceLogo} alt="Exchange" className="w-8 h-8 mx-auto" />
-                <p className="mt-1">Exchange</p>
-              </div>
-              <div className="text-center text-[#50e3c2] w-1/5">
-                <p className="mt-1">Mine</p>
-              </div>
-              <div className="text-center text-[#50e3c2] w-1/5" onClick={() => setCurrentPage('friends')}>
-                <p className="mt-1">Friends</p>
-              </div>
-              <div className="text-center text-[#50e3c2] w-1/5" onClick={() => setCurrentPage('earn')}>
-                <p className="mt-1">Earn</p>
-              </div>
-              <div className="text-center text-[#50e3c2] w-1/5">
-                <img src={hamsterCoin} alt="Airdrop" className="w-8 h-8 mx-auto" />
-                <p className="mt-1">Airdrop</p>
-              </div>
-            </div>
+            {/* <NavButtons setCurrentPage={setCurrentPage} currentPage="Earn" /> */}
           </div>
         </div>
+        <NavButtons setCurrentPage={setCurrentPage} currentPage="Earn" />
       </div>
     </div>
   );
